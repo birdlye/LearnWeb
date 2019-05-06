@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style type="text/css" media="screen">
+        body {margin:15px;font-family: Arial;}
+        h1,h2 {background: #aaa;padding:1% 2%;margin:0;}
+        #header {font-weight: bold;background: #ccc;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <form action="{% url 'cms:search' %}" method="get">
+            <a href="{% url 'cms:home' %}">Home</a>&bull;
+            <label for="q">Search:</label><input type="text" name="q">
+        </form>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
